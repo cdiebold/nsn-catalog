@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from static_pages import views as pages
+from catalog import views as catalog
 
 
 urlpatterns = [
     path('', pages.home, name='home'),
+    path('contact', pages.contact, name='contact'),
+    path('products', catalog.index, name='product-list'),
     path('admin/', admin.site.urls),
 ]

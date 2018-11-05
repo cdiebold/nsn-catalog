@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %}
+        <title>Adellis Corportation</title>
+    {% endblock title %}
+    <link href='{% static 'css/libraries.css' %}' rel='stylesheet'>
+    <link href='{% static 'css/main.css' %}' rel='stylesheet'>
+
+    {% block stylesheets %}
+    {% endblock stylesheets %}
+  </head>
+  <body>
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-left">
+        <a href="{% url 'home' %}">
+          <img src="{% static 'images/logo.png' %}" alt="Adellis Corporation" id="adellis_logo">
+        </a>
+      </div>
+      <div class="uk-navbar-center">
+        <button class="uk-button uk-button-primary" uk-toggle="target: #quote-form-modal">Quote</button>
+      </div>
+      <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+          <li><a href="{% url 'product-list' %}">Products</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    {% block content %}
+    {% endblock content %}
+
+    <div id="quote-form-modal" class="uk-flex-top uk-modal-container" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body ">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class='uk-container'>
+<form class="uk-grid-small" uk-grid>
+  <div class='uk-width-1-2@s'>
+    <input class="uk-input" type="text" placeholder="First Name">
+  </div>
+  <div class='uk-width-1-2@s'>
+    <input class="uk-input" type="text" placeholder="Last Name">
+  </div>
+  <div class='uk-width-1-1@s'>
+    <input class="uk-input" type="text" placeholder="Company Name">
+  </div>
+  <div class='uk-width-1-3@s'>
+    <input class="uk-input" type="email" placeholder="Email Address">
+
+  </div>
+  <div class='uk-width-1-3@s'>
+    <input class="uk-input" type="text" placeholder="Phone Number">
+  </div>
+  <div class='uk-width-1-3@s'>
+    <select class="uk-select">
+      <option>Phone Number</option>
+      <option>Email</option>
+      <option>Both</option>
+    </select>
+
+  </div>
+  <div class='uk-width-1-3@s'>
+    <input class="uk-input" type="text" placeholder="NSN">
+
+  </div>
+  <div class='uk-width-1-3@s'>
+    <input class="uk-input" type="text" placeholder="Part Number">
+
+  </div>
+  <div class='uk-width-1-3@s'>
+    <input class="uk-input" type="number" placeholder="Quantity" min="1">
+  </div>
+  <div class='uk-width-1-2@s'>
+      <select class="uk-select">
+          <option>Phone Number</option>
+          <option>Email</option>
+          <option>Both</option>
+        </select>
+      </div>
+    <div class='uk-width-1-2@s'>
+        <select class="uk-select">
+            <option>Phone Number</option>
+            <option>Email</option>
+            <option>Both</option>
+          </select>
+        </div>
+        <div class='uk-width-1-1@s'>
+            <label><input class="uk-checkbox" type="checkbox" checked> Accept the terms and conditions</label>
+        </div>
+        <button type="submit" class='uk-button uk-button-primary'>Submit</button>
+</form>
+
+
+        </div>
+      </div>
+    </div>
+
+
+      <script src='{% static 'vendor/jquery/dist/jquery.min.js' %}'></script>
+      <script src='{% static 'vendor/uikit-3.0-rc.20/js/uikit-icons.min.js' %}'></script>
+      <script src='{% static 'vendor/uikit-3.0-rc.20/js/uikit.min.js' %}'></script>
+    {% block scripts %}
+    {% endblock scripts %}
+  </body>
+</html>
