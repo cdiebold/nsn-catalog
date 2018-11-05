@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-MY_APPS = ['static_pages', 'catalog']
+MY_APPS = ['static_pages', 'catalog', 'sale']
 
 THIRD_PARTY_APPS = ['behave_django']
 
